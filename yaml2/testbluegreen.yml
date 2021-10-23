@@ -106,7 +106,7 @@ spec:
   template:
     metadata:
       labels:
-        run: nginx-blue
+        app: nginx-blue
     spec:
       volumes:
       - name: webdata
