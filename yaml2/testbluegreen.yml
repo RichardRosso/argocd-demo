@@ -16,14 +16,14 @@ spec:
                 name: nginx-svc-green
                 port:
                   number: 80
-            path: /registro
+            path: /blue
             pathType: Prefix
           - backend:
               service:
                 name: nginx-svc-blue
                 port:
                   number: 80
-            path: /secon
+            path: /green
             pathType: Prefix
 ---
 
