@@ -87,6 +87,8 @@ spec:
       containers:
       - image: nginx
         name: nginx
+        ports:
+        - containerPort: 8080
         volumeMounts:
         - name: webdata
           mountPath: "/usr/share/nginx/html"
@@ -121,6 +123,8 @@ spec:
       containers:
       - image: nginx
         name: nginx
+        ports:
+        - containerPort: 8080
         volumeMounts:
         - name: webdata
           mountPath: "/usr/share/nginx/html"
