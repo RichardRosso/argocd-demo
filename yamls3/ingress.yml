@@ -6,17 +6,17 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: cafe1.example.com
+  - host: dev.example.com
     http:
       paths:
-      - path: /tea
+      - path: /recepcion
         pathType: Prefix
         backend:
           service:
             name: tea-svc
             port:
               number: 80
-      - path: /coffee
+      - path: /autentica
         pathType: Prefix
         backend:
           service:
