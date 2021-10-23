@@ -9,14 +9,14 @@ spec:
   - host: dev.example.com
     http:
       paths:
-      - path: /recepcion
+      - path: /dev/recepcion
         pathType: Prefix
         backend:
           service:
             name: tea-svc
             port:
               number: 80
-      - path: /autentica
+      - path: /dev/autentica
         pathType: Prefix
         backend:
           service:
