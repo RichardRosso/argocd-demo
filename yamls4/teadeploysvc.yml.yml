@@ -5,7 +5,7 @@ metadata:
   name: tea
   namespace: demo3
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: tea 
@@ -18,7 +18,7 @@ spec:
       - name: tea 
         image: nginx
         ports:
-        - containerPort: 8080
+        - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -28,7 +28,7 @@ metadata:
 spec:
   ports:
   - port: 80
-    targetPort: 8080
+    targetPort: 80
     protocol: TCP
     name: http
   selector:
