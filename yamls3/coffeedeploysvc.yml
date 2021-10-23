@@ -16,7 +16,7 @@ spec:
       - name: coffee
         image: nginxdemos/nginx-hello:plain-text
         ports:
-        - containerPort: 8080
+        - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
