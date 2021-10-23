@@ -17,6 +17,8 @@ spec:
       containers:
       - name: tea 
         image: goldmandock/demoapp01
+        ports:
+        - containerPort: 8080
         
 ---
 apiVersion: v1
