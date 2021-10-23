@@ -68,11 +68,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      run: nginx-green
+      app: nginx-green
   template:
     metadata:
       labels:
-        run: nginx-green
+        app: nginx-green
     spec:
       volumes:
       - name: webdata
@@ -95,14 +95,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    run: nginx
+    app: nginx
   name: nginx-blue
   namespace: demo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      run: nginx-blue
+      app: nginx-blue
   template:
     metadata:
       labels:
