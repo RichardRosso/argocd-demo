@@ -16,6 +16,8 @@ spec:
       containers:
       - name: coffee
         image: goldmandock/demoapp01
+        ports:
+        - containerPort: 80
         
 ---
 apiVersion: v1
