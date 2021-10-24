@@ -9,7 +9,7 @@ spec:
   - host: qa.example.com
     http:
       paths:
-      - path: /one
+      - path: /
         pathType: Prefix
         backend:
           service:
