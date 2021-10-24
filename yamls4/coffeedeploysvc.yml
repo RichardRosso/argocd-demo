@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: coffee
-        image: dotnetfullmasterstack/customer.api
+        image: goldmandock/simpleapp:latest
         ports:
         - containerPort: 80
         
