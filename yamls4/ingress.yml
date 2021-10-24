@@ -9,14 +9,14 @@ spec:
   - host: qa.example.com
     http:
       paths:
-      - path: /test1
+      - path: /one
         pathType: Prefix
         backend:
           service:
             name: tea-svc
             port:
               number: 80
-      - path: /test2
+      - path: /two
         pathType: Prefix
         backend:
           service:
