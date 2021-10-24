@@ -15,9 +15,9 @@ spec:
     spec:
       containers:
       - name: coffee
-        image: goldmandock/demoapp01
+        image: dotnetfullmasterstack/customer.api
         ports:
-        - containerPort: 5000
+        - containerPort: 80
         
 ---
 apiVersion: v1
@@ -28,7 +28,7 @@ metadata:
 spec:
   ports:
   - port: 80
-    targetPort: 5000
+    targetPort: 80
     protocol: TCP
     name: http
   selector:
