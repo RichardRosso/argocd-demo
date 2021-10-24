@@ -2,20 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tea
+  name: simpleapp-deploy
   namespace: demo3
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: tea 
+      app: simpleapp 
   template:
     metadata:
       labels:
-        app: tea 
+        app: simpleapp 
     spec:
       containers:
-      - name: tea 
+      - name: simpleapp 
         image: goldmandock/simpleapp:latest
         ports:
         - containerPort: 80
@@ -24,7 +24,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: tea-svc
+  name: simpleapp-svc
   namespace: demo3
 spec:
   ports:
@@ -33,4 +33,4 @@ spec:
     protocol: TCP
     name: http
   selector:
-    app: tea
+    app: simpleapp
