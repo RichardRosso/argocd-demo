@@ -9,4 +9,4 @@ spec:
     name: simpleapp-deploy
   minReplicas: 2
   maxReplicas: 10
-  targetCPUUtilizationPercentage: 2  
+  targetCPUUtilizationPercentage: 50  
