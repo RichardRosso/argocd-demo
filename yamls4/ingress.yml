@@ -13,6 +13,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: simpleapp-svc1
+            name: simpleapp-svc
             port:
               number: 80      
