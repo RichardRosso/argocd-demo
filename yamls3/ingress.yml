@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: cafe-ingress
-  namespace: demo2
+  namespace: democd1
 spec:
   ingressClassName: nginx
   rules:
