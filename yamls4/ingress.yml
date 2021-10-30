@@ -9,7 +9,7 @@ spec:
   - host: simpleapp.example.com
     http:
       paths:
-      - path: /serviceA
+      - path: /
         pathType: Prefix
         backend:
           service:
