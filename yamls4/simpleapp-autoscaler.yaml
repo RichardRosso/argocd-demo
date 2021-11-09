@@ -7,6 +7,6 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: simpleapp-deploy
-  minReplicas: 8
-  maxReplicas: 10
+  minReplicas: 40
+  maxReplicas: 50
   targetCPUUtilizationPercentage: 80
