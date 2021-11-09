@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: simpleapp-deploy
 spec:
-  replicas: 10
+  replicas: 50
   selector:
     matchLabels:
       app: simpleapp 
