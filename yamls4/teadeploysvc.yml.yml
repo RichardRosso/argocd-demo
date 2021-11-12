@@ -5,9 +5,9 @@ metadata:
   name: simpleapp-deploy
 spec:
   #replicas: 10
-  #selector:
-    #matchLabels:
-      #app: simpleapp 
+  selector:
+    matchLabels:
+      app: simpleapp 
   template:
     metadata:
       labels:
