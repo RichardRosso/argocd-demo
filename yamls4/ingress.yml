@@ -2,17 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: simpleapp-ingress
-  annotations:
-     # Set up your ingress.class below (in this example, we are using nginx ingress controller)
-     kubernetes.io/ingress.class: "nginx"
-     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
-  tls:
-  # Replace the DOMAIN placeholder with the correct domain name
-   - hosts:
-     - simpleapp.example.com
-     secretName: letsencrypt-tls
-  #ingressClassName: nginx
+  ingressClassName: nginx
   rules:
   - host: simpleapp.example.com
     http:
