@@ -10,7 +10,7 @@ spec:
   tls:
   # Replace the DOMAIN placeholder with the correct domain name
    - hosts:
-     - example.com
+     - simpleapp.example.com
      secretName: letsencrypt-ca
   #ingressClassName: nginx
   rules:
