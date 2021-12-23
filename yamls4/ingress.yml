@@ -1,9 +1,18 @@
-apiVersion: networking.k8s.io/v1
+ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: simpleapp-ingress
+  annotations:
+     # Set up your ingress.class below (in this example, we are using nginx ingress controller)
+     kubernetes.io/ingress.class: "nginx"
+     cert-manager.io/issuer: "letsencrypt-prod"
 spec:
-  ingressClassName: nginx
+  tls:
+  # Replace the DOMAIN placeholder with the correct domain name
+   - hosts:
+     - example.com
+     secretName: letsencrypt-ca
+  #ingressClassName: nginx
   rules:
   - host: simpleapp.example.com
     http:
@@ -14,4 +23,4 @@ spec:
           service:
             name: simpleapp-svc
             port:
-              number: 80      
+              number: 80
