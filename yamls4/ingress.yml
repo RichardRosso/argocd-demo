@@ -12,8 +12,8 @@ spec:
    - hosts:
      - simpleapp.example.com
      secretName: letsencrypt-staging-tls
-  rules:
   ingressClassName: nginx
+  rules:
    - host: simpleapp.example.com
     http:
       paths:
