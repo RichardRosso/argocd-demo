@@ -11,7 +11,7 @@ spec:
   # Replace the DOMAIN placeholder with the correct domain name
    - hosts:
      - simpleapp.example.com
-     secretName: letsencrypt-staging-tls
+     secretName: letsencrypt-staging
   #ingressClassName: nginx
   rules:
    - host: simpleapp.example.com
