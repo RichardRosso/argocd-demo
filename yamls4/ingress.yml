@@ -3,19 +3,24 @@ kind: Ingress
 metadata:
   name: simpleapp-ingress
   annotations:
-    kubernetes.io/ingress.class: nginx
-    cert-manager.io/cluster-issuer: letsencrypt-staging
+     # Set up your ingress.class below (in this example, we are using nginx ingress controller)
+     kubernetes.io/ingress.class: "nginx"
+     cert-manager.io/cluster-issuer: "letsencrypt-staging"
 spec:
-  rules:
-    - http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: simpleapp-svc
-                port:
-                  number: 80
   tls:
-    - hosts:
-      - simpleapp.example.com
+  # Replace the DOMAIN placeholder with the correct domain name
+   - hosts:
+     - simpleapp.example.com
+     secretName: letsencrypt-staging
+  #ingressClassName: nginx
+  rules:
+   - host: simpleapp.example.com
+     http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: simpleapp-svc
+            port:
+              number: 80
