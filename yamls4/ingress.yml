@@ -5,13 +5,13 @@ metadata:
   annotations:
      # Set up your ingress.class below (in this example, we are using nginx ingress controller)
      kubernetes.io/ingress.class: "nginx"
-     cert-manager.io/cluster-issuer: "letsencrypt-staging"
+     #cert-manager.io/cluster-issuer: "letsencrypt-staging"
 spec:
-  tls:
+  #tls:
   # Replace the DOMAIN placeholder with the correct domain name
-   - hosts:
+   #- hosts:
      - simpleapp.example.com
-     secretName: letsencrypt-staging-tls
+    # secretName: letsencrypt-staging-tls
   #ingressClassName: nginx
   rules:
    - host: simpleapp.example.com
