@@ -15,8 +15,7 @@ spec:
      secretName: letsencrypt-staging
   ingressClassName: nginx
   rules:
-   - host: simpleapp.example.com
-     http:
+      http:
       paths:
       - path: /
         pathType: Prefix
