@@ -2,27 +2,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: simpleapp-deploy
+  name: appmac-deploy
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: simpleapp 
+      app: appmac 
   template:
     metadata:
       labels:
-        app: simpleapp 
+        app: appmac 
     spec:
       containers:
-      - name: simpleapp 
-        image: goldmandock/simpleapp:latest
+      - name:  appmac
+        image: goldmandock/appmac:latest
         resources:
           requests:
             memory: "64Mi"
             cpu: "200m"
           limits:
             memory: "128Mi"
-            cpu: "500m"
+            cpu: "350m"
         readinessProbe:
           httpGet:
             path: /
@@ -41,7 +41,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: simpleapp-svc
+  name: appmac-svc
 spec:
   ports:
   - port: 80
@@ -49,4 +49,4 @@ spec:
     protocol: TCP
     name: http
   selector:
-    app: simpleapp
+    app: appmac
