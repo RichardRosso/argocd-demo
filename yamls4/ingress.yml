@@ -11,8 +11,8 @@ spec:
   # Replace the DOMAIN placeholder with the correct domain name
    - hosts:
      - appmac.example.com
-     secretName: hello-tls
-  ingressClassName: nginx
+     secretName: letsencrypt-ca
+  #ingressClassName: nginx
   rules:
    - host: appmac.example.com 
      http:
