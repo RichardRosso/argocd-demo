@@ -12,7 +12,7 @@ spec:
    - hosts:
      - appmac.example.com
      secretName: hello-tls
-  #ingressClassName: nginx
+  ingressClassName: nginx
   rules:
    - host: appmac.example.com 
      http:
