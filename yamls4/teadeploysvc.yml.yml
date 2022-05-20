@@ -16,6 +16,7 @@ spec:
       containers:
       - name:  appmac
         image: goldmandock/appmac:latest
+        imagePullPolicy: Always
         resources:
           requests:
             memory: "64Mi"
@@ -36,6 +37,10 @@ spec:
           periodSeconds: 20           
         ports:
         - containerPort: 80
+      hostaliases:
+      - ip: 8.8.8.8
+        hostname:
+        - google.com
         
 ---
 apiVersion: v1
