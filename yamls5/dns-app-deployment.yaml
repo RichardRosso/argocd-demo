@@ -37,10 +37,12 @@ spec:
         ports:
         - containerPort: 80
           protocol: TCP
+      restartPolicy: Always
       hostAliases:
-       - ip: 192.168.0.7
-         hostnames:
-         - Richards-MacBook-Pro.local  
+      - hostnames:
+        - "Richards-MacBook-Pro.local"
+        ip: "192.168.0.7"
+            
         
 ---
 apiVersion: v1
