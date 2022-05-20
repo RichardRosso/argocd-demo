@@ -16,7 +16,6 @@ spec:
       containers:
       - name:  appmac
         image: goldmandock/appmac:latest
-        imagePullPolicy: Always
         resources:
           requests:
             memory: "64Mi"
