@@ -37,9 +37,9 @@ spec:
           periodSeconds: 20           
         ports:
         - containerPort: 80
-      hostaliases:
+      hostAliases:
       - ip: 8.8.8.8
-        hostname:
+        hostnames:
         - google.com
         
 ---
