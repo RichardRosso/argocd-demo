@@ -1,0 +1,57 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dns-appmac-deploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dns-appmac 
+  template:
+    metadata:
+      labels:
+        app: dns-appmac 
+    spec:
+      containers:
+      - name: dns-appmac 
+        image: goldmandock/appmac:latest
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "200m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 20           
+        ports:
+        - containerPort: 80
+          protocol: TCP
+      hostAliases:
+       - ip: 192.168.0.7
+         hostnames:
+         - Richards-MacBook-Pro.local  
+        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dns-appmac-svc
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+    name: http
+  selector:
+    app: dns-appmac
