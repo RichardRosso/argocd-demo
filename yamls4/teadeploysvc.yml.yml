@@ -36,10 +36,6 @@ spec:
           periodSeconds: 20           
         ports:
         - containerPort: 80
-      hostAliases:
-      - ip: 8.8.8.8
-        hostnames:
-        - google.com
         
 ---
 apiVersion: v1
