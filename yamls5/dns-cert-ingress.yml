@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dns-appmac-ingress
+  annotations:
+     # Set up your ingress.class below (in this example, we are using nginx ingress controller)
+     kubernetes.io/ingress.class: "nginx"
+     cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  tls:
+  # Replace the DOMAIN placeholder with the correct domain name
+   - hosts:
+     - dns-appmac.example.com
+     secretName: letsencrypt-ca
+  #ingressClassName: nginx
+  rules:
+   - host: dns-appmac.example.com 
+     http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: dns-appmac-svc
+            port:
+              number: 80
