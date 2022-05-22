@@ -10,11 +10,11 @@ spec:
   tls:
   # Replace the DOMAIN placeholder with the correct domain name
    - hosts:
-     - dns-appmac.nip.io
+     - dns-appmac.example1.com
      secretName: letsencrypt-ca1
   #ingressClassName: nginx
   rules:
-   - host: dns-appmac.nip.io
+   - host: dns-appmac.example1.com 
      http:
       paths:
       - path: /
